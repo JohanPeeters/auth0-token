@@ -1,0 +1,32 @@
+{
+  "name": "auth0-token-request",
+  "scripts": {
+    "test": "nyc mocha"
+  },
+  "main": "auth0-token-request.js",
+  "bin": {
+    "auth0-registration": "./bin/auth0-token-request.js"
+  },
+  "license": "MIT",
+  "version": "0.0.0",
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0",
+    "nyc": "^11.1.0",
+    "sinon": "^3.2.1"
+  },
+  "dependencies": {
+    "commander": "^2.11.0"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 100,
+    "statements": 100,
+    "branches": 100,
+    "reporter": [
+      "html",
+      "text"
+    ]
+  }
+}
