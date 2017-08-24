@@ -1,18 +1,16 @@
 const https = require('https')
-const config = require('./config')
 
 const tokenEndpoint = '/oauth/token'
 
-clientCredentialsGrant = function (clientID, secret, audience) {
+clientCredentialsGrant = function (idP, clientID, secret, audience) {
   return new Promise(function(resolve, reject){
     const options = {
-      hostname: config.IdP,
+      hostname: idP,
       path: tokenEndpoint,
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       }
-
     }
     const postData = JSON.stringify({
       grant_type: 'client_credentials',
