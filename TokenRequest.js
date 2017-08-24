@@ -2,7 +2,14 @@ const https = require('https')
 
 const tokenEndpoint = '/oauth/token'
 
-clientCredentialsGrant = function (idP, clientID, secret, audience) {
+clientCredentialsGrant = function (config) {
+  const verbose = config.verbose || false  
+  if (verbose)
+    console.log(`connecting with parameters ${JSON.stringify(config)}`)
+  const idP = config.IdP
+  const clientID = config.clientID
+  const secret = config.secret
+  const audience = config.audience
   return new Promise(function(resolve, reject){
     const options = {
       hostname: idP,
