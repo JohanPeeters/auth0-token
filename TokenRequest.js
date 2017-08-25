@@ -3,13 +3,24 @@ const https = require('https')
 const tokenEndpoint = '/oauth/token'
 
 clientCredentialsGrant = function (config) {
-  const verbose = config.verbose || false  
+  const verbose = config.verbose
+  // istanbul ignore next
   if (verbose)
     console.log(`connecting with parameters ${JSON.stringify(config)}`)
   const idP = config.IdP
   const clientID = config.clientID
   const secret = config.secret
   const audience = config.audience
+  if (!(idP && clientID && secret)) {
+    const err = new TypeError()
+    const missingProperties = []
+    if (!idP) missingProperties.push('idP')
+    if (!clientID) missingProperties.push('clientID')
+    if (!secret) missingProperties.push('secret')
+    err.message = `clientCredentialsGrant called with ${JSON.stringify(config)}.` +
+      `Missing ${JSON.stringify(missingProperties)}`
+    return Promise.reject(err)
+  }
   return new Promise(function(resolve, reject){
     const options = {
       hostname: idP,
