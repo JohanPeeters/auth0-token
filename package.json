@@ -1,17 +1,17 @@
 {
-  "name": "auth0-token-request",
+  "name": "auth0-token",
   "scripts": {
     "test": "nyc mocha"
   },
-  "main": "auth0-token-request.js",
+  "main": "auth0-token.js",
   "bin": {
-    "auth0-registration": "./bin/auth0-token-request.js"
+    "auth0-token": "./bin/auth0-token.js"
   },
   "license": "MIT",
   "version": "0.1.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JohanPeeters/auth0-token-request"
+    "url": "https://github.com/JohanPeeters/auth0-token"
   },
   "devDependencies": {
     "chai": "^4.1.1",
