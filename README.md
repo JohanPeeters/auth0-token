@@ -28,4 +28,8 @@ For now, only the Client Credentials Grant is supported.
 
 The package also offers a CLI, which, provided `node_modules\.bin` is in the path, may be used as follows:
 
-```auth0-token request-access-token domain.auth0.com some_client_id client_secret resource_server_id_aka_audience```
+  ```$ auth0-token request-access-token some-domain.auth0.com 123 secret audience_string```
+
+More extensive help with
+
+  ```$ auth0-token --help```
