@@ -8,7 +8,7 @@
     "auth0-token": "./bin/auth0-token.js"
   },
   "license": "MIT",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/JohanPeeters/auth0-token"
