@@ -2,7 +2,7 @@ const https = require('https')
 
 const tokenEndpoint = '/oauth/token'
 
-clientCredentialsGrant = function (config) {
+exports.clientCredentialsGrant = function (config) {
   const verbose = config.verbose
   // istanbul ignore next
   if (verbose)
@@ -67,8 +67,4 @@ clientCredentialsGrant = function (config) {
     req.write(postData)
     req.end()
   })
-}
-
-module.exports = {
-  clientCredentialsGrant: clientCredentialsGrant
 }
